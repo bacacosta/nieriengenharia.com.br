@@ -1,0 +1,13 @@
+RewriteEngine on
+RewriteBase /nieriengenharia.com.br/
+
+#RewriteCond %{HTTP_HOST} !^www.nieriengenharia.com.br$
+#RewriteRule ^(.*)$ http://www.nieriengenharia.com.br/$1 [R=301]
+
+RewriteCond %{REQUEST_URI} !^/nieriengenharia.com.br/([a-zA-Z]{2})/([a-zA-Z]+)(/)?$
+RewriteCond %{REQUEST_URI} !^/nieriengenharia.com.br/index.php$
+RewriteCond %{REQUEST_URI} !^/nieriengenharia.com.br/css/(.*).css$
+RewriteCond %{REQUEST_URI} !^/nieriengenharia.com.br/img/(.*).(png|jpg)$
+RewriteRule ^(.*)$ pt/start/ [R=301]
+
+RewriteRule ^([a-zA-Z]{2})/([a-zA-Z]+)(/)?$ index.php?page=$2&locale=$1

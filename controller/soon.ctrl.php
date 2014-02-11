@@ -1,0 +1,2 @@
+<?php
+// dummy soon controller
